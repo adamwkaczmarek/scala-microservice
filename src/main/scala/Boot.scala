@@ -23,7 +23,7 @@ object Boot extends App with RestService {
       config.database.password
     ).migrationDatabaseSchema()
 
-    val databaseConnector = new DatabaseConnector(
+   implicit val databaseConnector = new DatabaseConnector(
       config.database.jdbcUrl,
       config.database.username,
       config.database.password

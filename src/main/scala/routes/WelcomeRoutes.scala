@@ -2,7 +2,6 @@ package routes
 
 import javax.ws.rs.Path
 
-import about.AboutApp
 import akka.http.scaladsl.server.{Directives, Route}
 import de.heikoseeberger.akkahttpjson4s.Json4sSupport
 import org.json4s.jackson.Serialization

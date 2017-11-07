@@ -1,4 +1,7 @@
-package core
+package core.user_profile
+
+import core.UserProfile
+
 import scala.concurrent.{ExecutionContext, Future}
 
 class UserProfileService(userProfileStorage: UserProfileStorage)(implicit executionContext: ExecutionContext) {

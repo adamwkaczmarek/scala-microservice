@@ -7,4 +7,10 @@ package object core {
     require(lastName.nonEmpty, "lastName.empty")
   }
 
+  final case class Message(
+    sender:  String,
+    content: String,
+    id:      Long = 0L)
+
+
 }

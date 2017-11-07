@@ -1,9 +1,10 @@
-package core
+package core.user_profile
 
+import core.UserProfile
 import utils.db.DatabaseConnector
 
 trait UserProfileTable {
- protected val databaseConnector: DatabaseConnector
+  protected val databaseConnector: DatabaseConnector
   import databaseConnector.profile.api._
 
   class Profiles(tag: Tag) extends Table[UserProfile](tag, "profiles") {

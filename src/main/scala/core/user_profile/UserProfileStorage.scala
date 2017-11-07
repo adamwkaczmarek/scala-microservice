@@ -1,5 +1,6 @@
-package core
+package core.user_profile
 
+import core.UserProfile
 import utils.db.DatabaseConnector
 
 import scala.concurrent.{ExecutionContext, Future}

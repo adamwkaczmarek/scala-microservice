@@ -10,12 +10,21 @@ class MessageRoute (messageService: MessageService)
                    (implicit executionContext: ExecutionContext) extends OwnJsonSupport with Directives {
 
   def routes : Route = pathPrefix("messages"){
-      pathEndOrSingleSlash{
-        get{
-           complete(messageService.getAllMessages)
+      pathEndOrSingleSlash {
+        get {
+          complete(messageService.getAllMessagesContents)
         }
-      }
-
+      }~
+       pathPrefix(Segment) { id=>
+         pathEndOrSingleSlash{
+           get{
+             complete(messageService.getMessageById(id.toInt.toLong).map{
+               case Some(message)=>message
+               case None => None
+             })
+           }
+         }
+       }
   }
 
 }

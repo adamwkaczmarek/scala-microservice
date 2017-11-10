@@ -8,9 +8,15 @@ package object core {
   }
 
   final case class Message(
-    sender:  String,
-    content: String,
-    id:      Long = 0L)
+                            sender: String,
+                            content: String,
+                            id: Long = 0L)
 
+  final case class Device(
+                           id: String,
+                           name: String,
+                           description: String,
+                           ip: String
+                         )
 
 }
